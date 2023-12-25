@@ -1,5 +1,5 @@
 {
-  "name": "bring-to-front",
+  "name": "@evgenys91/bring-to-front",
   "version": "0.0.1",
   "description": "brings window with pid to foreground",
   "main": "index.js",
@@ -10,6 +10,14 @@
     "clean": "node-gyp clean && node-gyp configure",
     "demo": "node sample.js"
   },
+  "files": [
+    "binding.gyp",
+    "index.d.ts",
+    "index.js",
+    "src/index.cc",
+    "src/win32/pidToFront.cc",
+    "src/win32/pidToFront.h"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",
