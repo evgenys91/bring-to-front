@@ -2,10 +2,11 @@
   "targets": [
     {
       "target_name": "bringToFront",
-      'sources': [],
+      'sources': [
+        "src/index.cc"
+      ],
       'conditions': [
         ['OS=="win"', {'sources': [
-          "src/index.cc",
           "<(module_root_dir)/src/win32/pidToFront.cc"
         ]}],
         ['OS=="mac"', {
