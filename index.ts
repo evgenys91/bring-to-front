@@ -1,6 +1,8 @@
-const bringToFront = require('bindings')('bringToFront')
 
-export function pid(pid: number): number{
-
-    return bringToFront.pidToFront(pid);
+export function pid(pid: number): number {
+    if (process.platform === 'win32') {
+        const bringToFront = require('bindings')('bringToFront');
+        return bringToFront.pidToFront(pid);
+    }
+    return -1;
 }
