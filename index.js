@@ -1,7 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const bringToFront = require('bindings')('bringToFront');
 function pid(pid) {
-    return bringToFront.pidToFront(pid);
+    if (process.platform === 'win32') {
+        const bringToFront = require('bindings')('bringToFront');
+        return bringToFront.pidToFront(pid);
+    }
+    return -1;
 }
 exports.pid = pid;
